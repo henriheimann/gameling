@@ -7,6 +7,7 @@
 #include "pcd8544/pcd8544.h"
 #include "io_manager/io_manager.h"
 #include "resources.h"
+#include "executables/executable.h"
 
 // Handles to the hardware peripherals.
 extern piezo_buzzer_handle_t piezo_handle;
@@ -21,4 +22,13 @@ extern io_manager_t io_manager;
 // Global fonts and textures.
 extern gfx_font_t font;
 
+/**
+ * Application main called by the STM32Cube init code.
+ */
 void application_main();
+
+/**
+ * Forces a change of the current executable.
+ * @param executable The new executable to run.
+ */
+void application_switch_executable(executable_t *executable);

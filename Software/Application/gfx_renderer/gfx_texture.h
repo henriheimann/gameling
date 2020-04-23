@@ -24,4 +24,6 @@ typedef struct {
 
 bool gfx_texture_load_pcx(gfx_texture_t *texture, const uint8_t *pcx_data, size_t pcx_data_size);
 
+void gfx_texture_destroy(gfx_texture_t *texture);
+
 uint8_t gfx_texture_get_color(gfx_texture_t *texture, uint16_t x, uint16_t y);

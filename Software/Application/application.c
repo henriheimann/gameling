@@ -1,5 +1,5 @@
+#include "executables/exec_intro.h"
 #include "application.h"
-#include "games/reaction.h"
 
 #include "i2c.h"
 #include "spi.h"
@@ -74,16 +74,25 @@ gfx_font_t font = {
         .texture = &font_texture,
 };
 
+static executable_t *current_executable = NULL;
+
+static void load_global_data()
+{
+    // Load global textures
+    gfx_texture_load_pcx(&font_texture, font_pcx, sizeof(font_pcx));
+}
+
 void application_main()
 {
-    // Initialise peripherals.
+    // Initialise peripherals
 	pca9685_init(&pca9685_handle);
     pcd8544_init(&pcd8544_handle);
 
-    // Load global textures.
-    gfx_texture_load_pcx(&font_texture, font_pcx, sizeof(font_pcx));
+    // Load global data
+    load_global_data();
 
-    game_init_function();
+    // Start the with intro executable
+    application_switch_executable(&exec_intro);
 
     uint32_t last_tick = HAL_GetTick();
     uint32_t current_tick;
@@ -96,13 +105,30 @@ void application_main()
 		if (elapsed_ticks > 0) {
             last_tick = current_tick;
 
-            // Perform updates for all systems.
+            // Perform updates for all systems
             sfx_renderer_update(&sfx_renderer, elapsed_ticks);
             io_manager_update(&io_manager, elapsed_ticks);
             gfx_renderer_update(&gfx_renderer);
 
-            // Call game update function.
-            game_update_function(elapsed_ticks);
+            // Call current executable update function
+            if (current_executable != NULL) {
+                current_executable->update_function(elapsed_ticks);
+            }
 		}
 	}
+}
+
+void application_switch_executable(executable_t *executable)
+{
+    if (current_executable != executable) {
+
+        // Deinit old executable if there was one.
+        if (current_executable != NULL) {
+            current_executable->deinit_function();
+        }
+
+        current_executable = executable;
+
+        current_executable->init_function();
+    }
 }

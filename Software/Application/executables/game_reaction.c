@@ -1,4 +1,4 @@
-#include "reaction.h"
+#include "game_reaction.h"
 #include "application.h"
 
 #include <stdio.h>
@@ -32,15 +32,16 @@ static uint8_t button_indices[BUTTONS_TO_PRESS_COUNT] = {
 
 static uint16_t current_index = 0;
 
-void game_init_function()
+void init_function()
 {
     io_manager_set_display_brightness(&io_manager, 0.3f);
+    gfx_renderer_fill_rect(&gfx_renderer, 0, 0, PCD8544_LCD_WIDTH, PCD8544_LCD_HEIGHT, PCD8544_COLOR_WHITE);
 }
 
-void game_update_function(uint32_t elapsed_ticks)
+void update_function(uint32_t elapsed_ticks)
 {
     uint32_t total_ticks = HAL_GetTick();
-    int tenth_of_seconds = (total_ticks / 100);
+    int tenth_of_seconds = ((int)total_ticks / 100);
     int seconds = (tenth_of_seconds / 10);
     int minutes = (seconds / 60);
 
@@ -63,3 +64,14 @@ void game_update_function(uint32_t elapsed_ticks)
         }
     }
 }
+
+void deinit_function()
+{
+
+}
+
+executable_t game_reaction = {
+        .init_function = init_function,
+        .update_function = update_function,
+        .deinit_function = deinit_function
+};

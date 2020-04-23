@@ -115,6 +115,17 @@ bool gfx_texture_load_pcx(gfx_texture_t *texture, const uint8_t *pcx_data, size_
     return true;
 }
 
+void gfx_texture_destroy(gfx_texture_t *texture)
+{
+    assert(texture->data != NULL);
+
+    free(texture->data);
+    texture->data = NULL;
+    texture->width = 0;
+    texture->height = 0;
+    texture->data_size = 0;
+}
+
 uint8_t gfx_texture_get_color(gfx_texture_t *texture, uint16_t x, uint16_t y)
 {
     assert(x < texture->width);
