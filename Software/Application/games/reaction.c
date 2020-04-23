@@ -34,7 +34,7 @@ static uint16_t current_index = 0;
 
 void game_init_function()
 {
-    io_manager_set_display_brightness(&io_manager, 0.6f);
+    io_manager_set_display_brightness(&io_manager, 0.3f);
 }
 
 void game_update_function(uint32_t elapsed_ticks)
@@ -53,7 +53,7 @@ void game_update_function(uint32_t elapsed_ticks)
     gfx_renderer_fill_rect(&gfx_renderer, 0, 0, 48, 7, 0);
     gfx_renderer_draw_text(&gfx_renderer, &font, 0, 0, buffer);
 
-    io_manager_set_button_brightness(&io_manager, button_indices[current_index], 0.5f);
+    io_manager_set_button_brightness(&io_manager, button_indices[current_index], 0.2f);
 
     if (io_manager_get_button_state(&io_manager, button_indices[current_index])) {
         io_manager_set_button_brightness(&io_manager, button_indices[current_index], 0.0f);
