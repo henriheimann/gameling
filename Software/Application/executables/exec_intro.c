@@ -10,19 +10,41 @@ static gfx_texture_t logo_texture;
 
 static uint32_t total_elapsed_ticks;
 
+static sfx_renderer_segment_t segments[] = {
+        { SFX_RENDERER_NOTE_A2, 187 },
+        { SFX_RENDERER_PAUSE, 63 },
+        { SFX_RENDERER_NOTE_E3, 187 },
+        { SFX_RENDERER_PAUSE, 63 },
+        { SFX_RENDERER_NOTE_D3, 187 },
+        { SFX_RENDERER_PAUSE, 63 },
+        { SFX_RENDERER_NOTE_G3, 187 },
+        { SFX_RENDERER_PAUSE, 63 },
+        { SFX_RENDERER_NOTE_A3, 300 }
+};
+
+static sfx_renderer_song_t song = {
+        .num_segments = 9,
+        .segments = segments
+};
+
+static bool rendererd = false;
+
 static void init_function()
 {
     gfx_texture_load_pcx(&logo_texture, logo_pcx, sizeof(logo_pcx));
-    sfx_renderer_play_note(&sfx_renderer, SFX_RENDERER_NOTE_E4, 1000);
+    sfx_renderer_play_song(&sfx_renderer, &song, false);
 }
 
 static void update_function(uint32_t elapsed_ticks)
 {
     total_elapsed_ticks += elapsed_ticks;
 
-    gfx_renderer_draw_texture(&gfx_renderer, &logo_texture, 12, 17);
+    if (total_elapsed_ticks > 300 && !rendererd) {
+        gfx_renderer_draw_texture(&gfx_renderer, &logo_texture, 12, 17);
+        rendererd = true;
+    }
 
-    if (total_elapsed_ticks > 1000) {
+    if (total_elapsed_ticks > 1500) {
         application_switch_executable(&game_reaction);
     }
 }

@@ -47,6 +47,8 @@ void sfx_renderer_play_song(sfx_renderer_t *sfx_renderer, sfx_renderer_song_t *s
     sfx_renderer->current_song = song;
     sfx_renderer->current_segment = 0;
     sfx_renderer->current_segment_ticks = 0;
+
+    sfx_renderer_play_next_segment(sfx_renderer);
 }
 
 void sfx_renderer_play_note(sfx_renderer_t *sfx_renderer, sfx_renderer_note_t note, uint16_t duration)
