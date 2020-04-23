@@ -64,6 +64,13 @@ void io_manager_set_button_brightness(io_manager_t *io_manager, uint8_t button_i
     }
 }
 
+void io_manager_set_all_button_brightnesses(io_manager_t *io_manager, float brightness)
+{
+    for (int i = 0; i < IO_MANAGER_BUTTON_COUNT; i++) {
+        io_manager_set_button_brightness(io_manager, i, brightness);
+    }
+}
+
 void io_manager_set_button_brightness_blinking(io_manager_t *io_manager, uint8_t button_index, float brightness, uint16_t blinking_period, uint16_t blinking_on_time)
 {
     io_manager->led_buttons[button_index].backup_brightness = brightness;

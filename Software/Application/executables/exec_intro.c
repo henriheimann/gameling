@@ -27,7 +27,7 @@ static sfx_renderer_song_t song = {
         .segments = segments
 };
 
-static bool rendererd = false;
+static int state = 0;
 
 static void init_function()
 {
@@ -39,12 +39,42 @@ static void update_function(uint32_t elapsed_ticks)
 {
     total_elapsed_ticks += elapsed_ticks;
 
-    if (total_elapsed_ticks > 300 && !rendererd) {
-        gfx_renderer_draw_texture(&gfx_renderer, &logo_texture, 12, 17);
-        rendererd = true;
+    if (state == 0 && total_elapsed_ticks > 100) {
+        io_manager_set_button_brightness(&io_manager, 9, 0.05f);
+        io_manager_set_button_brightness(&io_manager, 10, 0.05f);
+        io_manager_set_button_brightness(&io_manager, 11, 0.05f);
+        state = 1;
     }
 
-    if (total_elapsed_ticks > 1500) {
+    if (state == 1 && total_elapsed_ticks > 300) {
+        io_manager_set_button_brightness(&io_manager, 6, 0.05f);
+        io_manager_set_button_brightness(&io_manager, 7, 0.05f);
+        io_manager_set_button_brightness(&io_manager, 8, 0.05f);
+        state = 2;
+    }
+
+    if (state == 2 && total_elapsed_ticks > 500) {
+        io_manager_set_button_brightness(&io_manager, 3, 0.05f);
+        io_manager_set_button_brightness(&io_manager, 4, 0.05f);
+        io_manager_set_button_brightness(&io_manager, 5, 0.05f);
+        state = 3;
+    }
+
+    if (state == 3 && total_elapsed_ticks > 700) {
+        io_manager_set_button_brightness(&io_manager, 0, 0.05f);
+        io_manager_set_button_brightness(&io_manager, 1, 0.05f);
+        io_manager_set_button_brightness(&io_manager, 2, 0.05f);
+        state = 4;
+    }
+
+    if (state == 4 && total_elapsed_ticks > 900) {
+        io_manager_set_display_brightness(&io_manager, 0.5f);
+        io_manager_set_all_button_brightnesses(&io_manager, 0.2f);
+        gfx_renderer_draw_texture(&gfx_renderer, &logo_texture, 12, 17);
+        state = 5;
+    }
+
+    if (total_elapsed_ticks > 2000) {
         application_switch_executable(&game_reaction);
     }
 }
@@ -52,6 +82,7 @@ static void update_function(uint32_t elapsed_ticks)
 static void deinit_function()
 {
     gfx_texture_destroy(&logo_texture);
+    io_manager_set_all_button_brightnesses(&io_manager, 0.0f);
 }
 
 executable_t exec_intro = {

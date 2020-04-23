@@ -139,6 +139,13 @@ bool io_manager_get_button_state(io_manager_t *io_manager, uint8_t button_index)
  */
 void io_manager_set_button_brightness(io_manager_t *io_manager, uint8_t button_index, float brightness);
 
+/**
+ * Sets the brightness for all LEDs of every button.
+ * @param io_manager The IO manager managing the LEDs.
+ * @param brightness The brightness to set.
+ */
+void io_manager_set_all_button_brightnesses(io_manager_t *io_manager, float brightness);
+
 void io_manager_set_button_brightness_blinking(io_manager_t *io_manager, uint8_t button_index, float brightness, uint16_t blinking_period, uint16_t blinking_on_time);
 
 /**
