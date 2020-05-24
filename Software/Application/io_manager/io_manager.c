@@ -14,6 +14,10 @@ void io_manager_update(io_manager_t *io_manager, uint32_t elapsed_ticks)
         // Read the current button state.
         led_button->current_state = (HAL_GPIO_ReadPin(led_button->button_port, led_button->button_pin) == GPIO_PIN_RESET);
 
+        if (!led_button->current_state) {
+            led_button->clicked = false;
+        }
+
         // LED blinking calculation.
         if (led_button->blinking_period > 0) {
             led_button->blinking_elapsed += elapsed_ticks;
@@ -53,6 +57,20 @@ void io_manager_update(io_manager_t *io_manager, uint32_t elapsed_ticks)
 bool io_manager_get_button_state(io_manager_t *io_manager, uint8_t button_index)
 {
     return io_manager->led_buttons[button_index].current_state;
+}
+
+bool io_manager_get_button_clicked(io_manager_t *io_manager, uint8_t button_index)
+{
+    if (io_manager->led_buttons[button_index].current_state) {
+        if (!io_manager->led_buttons[button_index].clicked) {
+            io_manager->led_buttons[button_index].clicked = true;
+            return true;
+        }
+    } else {
+        io_manager->led_buttons[button_index].clicked = false;
+    }
+
+    return false;
 }
 
 void io_manager_set_button_brightness(io_manager_t *io_manager, uint8_t button_index, float brightness)

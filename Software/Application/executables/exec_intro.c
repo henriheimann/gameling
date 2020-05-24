@@ -1,5 +1,5 @@
 #include "exec_intro.h"
-#include "game_reaction.h"
+#include "exec_menu.h"
 
 #include <gfx_renderer/gfx_texture.h>
 #include <resources.h>
@@ -32,7 +32,7 @@ static int state = 0;
 static void init_function()
 {
     gfx_texture_load_pcx(&logo_texture, logo_pcx, sizeof(logo_pcx));
-    sfx_renderer_play_song(&sfx_renderer, &song, false);
+    //sfx_renderer_play_song(&sfx_renderer, &song, false);
 }
 
 static void update_function(uint32_t elapsed_ticks)
@@ -75,7 +75,7 @@ static void update_function(uint32_t elapsed_ticks)
     }
 
     if (total_elapsed_ticks > 2000) {
-        application_switch_executable(&game_reaction);
+        application_switch_executable(&exec_menu);
     }
 }
 

@@ -64,6 +64,11 @@ typedef struct {
      */
     bool current_state;
 
+    /**
+     * True after a call to io_manager_get_button_clicked when the button was pressed until release.
+     */
+    bool clicked;
+
 } led_button_t;
 
 /**
@@ -130,6 +135,14 @@ void io_manager_update(io_manager_t *io_manager, uint32_t elapsed_ticks);
  * @return True when pressed, false otherwise.
  */
 bool io_manager_get_button_state(io_manager_t *io_manager, uint8_t button_index);
+
+/**
+ * Returns true exactly once during on press of the button with the given index.
+ * @param io_manager The IO manager managing the buttons.
+ * @param button_index The index of the button to return the click of.
+ * @return True when pressed, false otherwise.
+ */
+bool io_manager_get_button_clicked(io_manager_t *io_manager, uint8_t button_index);
 
 /**
  * Sets the brightness for the LED of the button with the given index.
