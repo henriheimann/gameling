@@ -1,6 +1,5 @@
 EESchema Schematic File Version 4
-LIBS:Gameling-cache
-EELAYER 29 0
+EELAYER 30 0
 EELAYER END
 $Descr A3 16535 11693
 encoding utf-8
@@ -15,7 +14,7 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 $Comp
-L My_Symbol_Library:STM32L412KB U3
+L my-symbols-library:STM32L412KB U3
 U 1 1 5D3D757F
 P 4400 9200
 F 0 "U3" H 4900 8100 50  0000 C CNN
@@ -31,7 +30,7 @@ U 1 1 5D3DD173
 P 9650 2300
 F 0 "BT1" H 9758 2346 50  0000 L CNN
 F 1 "Battery" H 9758 2255 50  0000 L CNN
-F 2 "My_Library:BatteryHolder_Keystone_2468_2xAAA_NoSilkscreen" V 9650 2360 50  0001 C CNN
+F 2 "my-footprints-library:BatteryHolder_Keystone_2468_2xAAA_NoSilkscreen" V 9650 2360 50  0001 C CNN
 F 3 "~" V 9650 2360 50  0001 C CNN
 	1    9650 2300
 	1    0    0    -1  
@@ -42,7 +41,7 @@ U 1 1 5D3A6DCD
 P 10050 1900
 F 0 "SW13" H 10050 2185 50  0000 C CNN
 F 1 "SW_SPDT" H 10050 2094 50  0000 C CNN
-F 2 "My_Library:SW_CuK_OS102011MA1QN1_SPDT_Angled_With3DModel_NoSilkscreen" H 10050 1900 50  0001 C CNN
+F 2 "my-footprints-library:SW_CuK_OS102011MA1QN1_SPDT_Angled_With3DModel_NoSilkscreen" H 10050 1900 50  0001 C CNN
 F 3 "~" H 10050 1900 50  0001 C CNN
 	1    10050 1900
 	1    0    0    -1  
@@ -172,7 +171,7 @@ U 1 1 5D3FAF0C
 P 13100 1600
 F 0 "L1" V 12919 1600 50  0000 C CNN
 F 1 "4.7uH" V 13010 1600 50  0000 C CNN
-F 2 "My_Library:L_Bourns-SRN4018_With3DModel" H 13100 1600 50  0001 C CNN
+F 2 "my-footprints-library:L_Bourns-SRN4018_With3DModel" H 13100 1600 50  0001 C CNN
 F 3 "~" H 13100 1600 50  0001 C CNN
 	1    13100 1600
 	0    1    1    0   
@@ -303,7 +302,7 @@ F 3 "" H 9650 2700 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L My_Symbol_Library:AAT1217 U5
+L my-symbols-library:AAT1217 U5
 U 1 1 5D45AD20
 P 13750 1750
 F 0 "U5" H 13950 1850 50  0000 C CNN
@@ -314,7 +313,7 @@ F 3 "" H 13150 1150 60  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L My_Symbol_Library:TPS27081A U4
+L my-symbols-library:TPS27081A U4
 U 1 1 5D45E6FD
 P 11200 2000
 F 0 "U4" H 11175 2487 60  0000 C CNN
@@ -676,7 +675,7 @@ U 1 1 5D85CD5C
 P 8700 9250
 F 0 "J1" H 8257 9296 50  0000 R CNN
 F 1 "Conn_ARM_JTAG_SWD_10" H 8257 9205 50  0000 R CNN
-F 2 "My_Library:Amphenol_FCI_ShroudedSocket_2x05_P1.27mm_Vertical_SMD" H 8700 9250 50  0001 C CNN
+F 2 "my-footprints-library:Amphenol_FCI_ShroudedSocket_2x05_P1.27mm_Vertical_SMD" H 8700 9250 50  0001 C CNN
 F 3 "http://infocenter.arm.com/help/topic/com.arm.doc.ddi0314h/DDI0314H_coresight_components_trm.pdf" V 8350 8000 50  0001 C CNN
 	1    8700 9250
 	1    0    0    -1  
@@ -1010,7 +1009,7 @@ U 1 1 5D3EC74C
 P 14050 5150
 F 0 "BZ1" H 14202 5179 50  0000 L CNN
 F 1 "Buzzer" H 14202 5088 50  0000 L CNN
-F 2 "My_Library:Buzzer_CUI_CPT-9019S-SMT_With3DModel" V 14025 5250 50  0001 C CNN
+F 2 "my-footprints-library:Buzzer_CUI_CPT-9019S-SMT_With3DModel" V 14025 5250 50  0001 C CNN
 F 3 "~" V 14025 5250 50  0001 C CNN
 	1    14050 5150
 	1    0    0    -1  
@@ -1477,7 +1476,7 @@ U 1 1 5D3A5EAE
 P 8450 6600
 F 0 "SW12" H 8450 6985 50  0000 C CNN
 F 1 "SW_Push_LED" H 8450 6894 50  0000 C CNN
-F 2 "My_Library:Generic_LED_Tactile_Button" H 8450 6900 50  0001 C CNN
+F 2 "my-footprints-library:Generic_LED_Tactile_Button" H 8450 6900 50  0001 C CNN
 F 3 "~" H 8450 6900 50  0001 C CNN
 	1    8450 6600
 	1    0    0    -1  
@@ -1488,7 +1487,7 @@ U 1 1 5D3A5EA8
 P 7200 5950
 F 0 "SW8" H 7200 6335 50  0000 C CNN
 F 1 "SW_Push_LED" H 7200 6244 50  0000 C CNN
-F 2 "My_Library:Generic_LED_Tactile_Button" H 7200 6250 50  0001 C CNN
+F 2 "my-footprints-library:Generic_LED_Tactile_Button" H 7200 6250 50  0001 C CNN
 F 3 "~" H 7200 6250 50  0001 C CNN
 	1    7200 5950
 	1    0    0    -1  
@@ -1499,7 +1498,7 @@ U 1 1 5D3A5EA2
 P 5950 5300
 F 0 "SW4" H 5950 5685 50  0000 C CNN
 F 1 "SW_Push_LED" H 5950 5594 50  0000 C CNN
-F 2 "My_Library:Generic_LED_Tactile_Button" H 5950 5600 50  0001 C CNN
+F 2 "my-footprints-library:Generic_LED_Tactile_Button" H 5950 5600 50  0001 C CNN
 F 3 "~" H 5950 5600 50  0001 C CNN
 	1    5950 5300
 	1    0    0    -1  
@@ -1510,7 +1509,7 @@ U 1 1 5D3A5E9C
 P 7200 6600
 F 0 "SW11" H 7200 6985 50  0000 C CNN
 F 1 "SW_Push_LED" H 7200 6894 50  0000 C CNN
-F 2 "My_Library:Generic_LED_Tactile_Button" H 7200 6900 50  0001 C CNN
+F 2 "my-footprints-library:Generic_LED_Tactile_Button" H 7200 6900 50  0001 C CNN
 F 3 "~" H 7200 6900 50  0001 C CNN
 	1    7200 6600
 	1    0    0    -1  
@@ -1521,7 +1520,7 @@ U 1 1 5D3A5E96
 P 5950 5950
 F 0 "SW7" H 5950 6335 50  0000 C CNN
 F 1 "SW_Push_LED" H 5950 6244 50  0000 C CNN
-F 2 "My_Library:Generic_LED_Tactile_Button" H 5950 6250 50  0001 C CNN
+F 2 "my-footprints-library:Generic_LED_Tactile_Button" H 5950 6250 50  0001 C CNN
 F 3 "~" H 5950 6250 50  0001 C CNN
 	1    5950 5950
 	1    0    0    -1  
@@ -1532,7 +1531,7 @@ U 1 1 5D3A5E90
 P 8450 4700
 F 0 "SW3" H 8450 5085 50  0000 C CNN
 F 1 "SW_Push_LED" H 8450 4994 50  0000 C CNN
-F 2 "My_Library:Generic_LED_Tactile_Button" H 8450 5000 50  0001 C CNN
+F 2 "my-footprints-library:Generic_LED_Tactile_Button" H 8450 5000 50  0001 C CNN
 F 3 "~" H 8450 5000 50  0001 C CNN
 	1    8450 4700
 	1    0    0    -1  
@@ -1543,7 +1542,7 @@ U 1 1 5D3A0558
 P 5950 6600
 F 0 "SW10" H 5950 6985 50  0000 C CNN
 F 1 "SW_Push_LED" H 5950 6894 50  0000 C CNN
-F 2 "My_Library:Generic_LED_Tactile_Button" H 5950 6900 50  0001 C CNN
+F 2 "my-footprints-library:Generic_LED_Tactile_Button" H 5950 6900 50  0001 C CNN
 F 3 "~" H 5950 6900 50  0001 C CNN
 	1    5950 6600
 	1    0    0    -1  
@@ -1554,7 +1553,7 @@ U 1 1 5D3A0552
 P 8450 5300
 F 0 "SW6" H 8450 5685 50  0000 C CNN
 F 1 "SW_Push_LED" H 8450 5594 50  0000 C CNN
-F 2 "My_Library:Generic_LED_Tactile_Button" H 8450 5600 50  0001 C CNN
+F 2 "my-footprints-library:Generic_LED_Tactile_Button" H 8450 5600 50  0001 C CNN
 F 3 "~" H 8450 5600 50  0001 C CNN
 	1    8450 5300
 	1    0    0    -1  
@@ -1565,7 +1564,7 @@ U 1 1 5D3A054C
 P 7200 4700
 F 0 "SW2" H 7200 5085 50  0000 C CNN
 F 1 "SW_Push_LED" H 7200 4994 50  0000 C CNN
-F 2 "My_Library:Generic_LED_Tactile_Button" H 7200 5000 50  0001 C CNN
+F 2 "my-footprints-library:Generic_LED_Tactile_Button" H 7200 5000 50  0001 C CNN
 F 3 "~" H 7200 5000 50  0001 C CNN
 	1    7200 4700
 	1    0    0    -1  
@@ -1576,7 +1575,7 @@ U 1 1 5D39C849
 P 8450 5950
 F 0 "SW9" H 8450 6335 50  0000 C CNN
 F 1 "SW_Push_LED" H 8450 6244 50  0000 C CNN
-F 2 "My_Library:Generic_LED_Tactile_Button" H 8450 6250 50  0001 C CNN
+F 2 "my-footprints-library:Generic_LED_Tactile_Button" H 8450 6250 50  0001 C CNN
 F 3 "~" H 8450 6250 50  0001 C CNN
 	1    8450 5950
 	1    0    0    -1  
@@ -1587,7 +1586,7 @@ U 1 1 5D39BCFD
 P 7200 5300
 F 0 "SW5" H 7200 5685 50  0000 C CNN
 F 1 "SW_Push_LED" H 7200 5594 50  0000 C CNN
-F 2 "My_Library:Generic_LED_Tactile_Button" H 7200 5600 50  0001 C CNN
+F 2 "my-footprints-library:Generic_LED_Tactile_Button" H 7200 5600 50  0001 C CNN
 F 3 "~" H 7200 5600 50  0001 C CNN
 	1    7200 5300
 	1    0    0    -1  
@@ -1598,7 +1597,7 @@ U 1 1 5D39A5D5
 P 5950 4700
 F 0 "SW1" H 5950 5085 50  0000 C CNN
 F 1 "SW_Push_LED" H 5950 4994 50  0000 C CNN
-F 2 "My_Library:Generic_LED_Tactile_Button" H 5950 5000 50  0001 C CNN
+F 2 "my-footprints-library:Generic_LED_Tactile_Button" H 5950 5000 50  0001 C CNN
 F 3 "~" H 5950 5000 50  0001 C CNN
 	1    5950 4700
 	1    0    0    -1  
@@ -1791,7 +1790,7 @@ U 1 1 5D3B2FA4
 P 1850 2450
 F 0 "D2" H 1843 2666 50  0000 C CNN
 F 1 "LED" H 1843 2575 50  0000 C CNN
-F 2 "My_Library:D_0805_2012Metric_Pad1.15x1.40mm_HandSolder_NoSilkscreen" H 1850 2450 50  0001 C CNN
+F 2 "my-footprints-library:D_0805_2012Metric_Pad1.15x1.40mm_HandSolder_NoSilkscreen" H 1850 2450 50  0001 C CNN
 F 3 "~" H 1850 2450 50  0001 C CNN
 	1    1850 2450
 	1    0    0    -1  
@@ -1802,7 +1801,7 @@ U 1 1 5D3B268F
 P 3100 2450
 F 0 "D4" H 3093 2666 50  0000 C CNN
 F 1 "LED" H 3093 2575 50  0000 C CNN
-F 2 "My_Library:D_0805_2012Metric_Pad1.15x1.40mm_HandSolder_NoSilkscreen" H 3100 2450 50  0001 C CNN
+F 2 "my-footprints-library:D_0805_2012Metric_Pad1.15x1.40mm_HandSolder_NoSilkscreen" H 3100 2450 50  0001 C CNN
 F 3 "~" H 3100 2450 50  0001 C CNN
 	1    3100 2450
 	1    0    0    -1  
@@ -1813,7 +1812,7 @@ U 1 1 5D3B2084
 P 3100 2100
 F 0 "D3" H 3093 2316 50  0000 C CNN
 F 1 "LED" H 3093 2225 50  0000 C CNN
-F 2 "My_Library:D_0805_2012Metric_Pad1.15x1.40mm_HandSolder_NoSilkscreen" H 3100 2100 50  0001 C CNN
+F 2 "my-footprints-library:D_0805_2012Metric_Pad1.15x1.40mm_HandSolder_NoSilkscreen" H 3100 2100 50  0001 C CNN
 F 3 "~" H 3100 2100 50  0001 C CNN
 	1    3100 2100
 	1    0    0    -1  
@@ -1824,7 +1823,7 @@ U 1 1 5D3B149C
 P 1850 2100
 F 0 "D1" H 1843 2316 50  0000 C CNN
 F 1 "LED" H 1843 2225 50  0000 C CNN
-F 2 "My_Library:D_0805_2012Metric_Pad1.15x1.40mm_HandSolder_NoSilkscreen" H 1850 2100 50  0001 C CNN
+F 2 "my-footprints-library:D_0805_2012Metric_Pad1.15x1.40mm_HandSolder_NoSilkscreen" H 1850 2100 50  0001 C CNN
 F 3 "~" H 1850 2100 50  0001 C CNN
 	1    1850 2100
 	1    0    0    -1  
@@ -1841,12 +1840,12 @@ F 3 "http://www.nxp.com/documents/data_sheet/PCA9685.pdf" H 2850 6100 50  0001 C
 	1    0    0    -1  
 $EndComp
 $Comp
-L Nokia_5110-3310_LCD:Nokia_5110_LCD U1
+L my-symbols-library:Nokia_5110_LCD U1
 U 1 1 5D3A64A5
 P 5950 2100
 F 0 "U1" H 6128 2158 60  0000 L CNN
 F 1 "Nokia_5110_LCD" H 6128 2052 60  0000 L CNN
-F 2 "Nokia_5110-3310_LCD:Nokia_5110-3310_LCD_NoSilkscreen" H 5950 2100 60  0001 C CNN
+F 2 "my-footprints-library:Nokia_5110-3310_LCD_NoSilkscreen" H 5950 2100 60  0001 C CNN
 F 3 "" H 5950 2100 60  0000 C CNN
 	1    5950 2100
 	1    0    0    -1  
