@@ -1,6 +1,0 @@
-[submodule "Software/Drivers/Components/pca9685"]
-	path = Software/Drivers/Components/pca9685
-	url = https://henriheimann@github.com/henriheimann/stm32-pca9685.git
-[submodule "Software/Drivers/Components/pcd8544"]
-	path = Software/Drivers/Components/pcd8544
-	url = https://henriheimann@github.com/henriheimann/stm32-pcd8544.git
